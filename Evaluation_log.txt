@@ -50,6 +50,8 @@ SUMMARY
 ========================================================================
   Known-class accuracy                : 26.45%
   Overall accuracy                    : 22.30%
+  Macro-averaged precision            : 27.02%
+  Macro-averaged recall               : 24.91%
   Macro-averaged F1 (present classes) : 0.2377
   Macro-averaged recall (active known classes) : 26.3%
   Contamination recall                : 53.3%
