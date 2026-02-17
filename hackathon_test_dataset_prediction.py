@@ -391,7 +391,7 @@ def main():
     )
     plot_confusion_matrix(
         cm_8, Config.TRAINING_CLASS_NAMES,
-        title="Confusion Matrix — Known Classes (normalised)",
+        title="Confusion Matrix — Known Classes",
         path=os.path.join(Config.OUTPUT_DIR, "cm_known_classes.png")
     )
 
@@ -401,7 +401,7 @@ def main():
     )
     plot_confusion_matrix(
         cm_9, ALL_CLASS_NAMES,
-        title="Confusion Matrix — All Classes incl. 'other' (normalised)",
+        title="Confusion Matrix — All Classes incl. 'other'",
         path=os.path.join(Config.OUTPUT_DIR, "cm_with_other.png")
     )
     plot_confusion_matrix(
@@ -486,6 +486,8 @@ def main():
     print(sep)
     print(f"  Known-class accuracy                : {known_acc*100:.2f}%")
     print(f"  Overall accuracy                    : {final_acc*100:.2f}%")
+    print(f"  Macro-averaged precision            : {macro_p*100:.2f}%")
+    print(f"  Macro-averaged recall               : {macro_r*100:.2f}%")
     print(f"  Macro-averaged F1 (present classes) : {macro_f:.4f}")
     print(f"  Macro-averaged recall (active known classes) : {macro_recall_active*100:.1f}%")
     print(f"  Contamination recall                : {rec_contamination:.1f}%")
