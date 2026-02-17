@@ -1,0 +1,70 @@
+========================================================================
+Semiconductor Defect Classification — Model Evaluation
+========================================================================
+
+Loading model ...
+✓ Model loaded
+Found 296 files belonging to 9 classes.
+Found 296 files belonging to 9 classes.
+Running inference ...
+✓ 296 samples  |  155 known-class  |  141 unknown-class
+  Mean model confidence: 0.6370
+
+========================================================================
+CLASSIFICATION REPORT
+========================================================================
+
+  Class                   Precision     Recall         F1   Accuracy
+  --------------------------------------------------------------------
+  Contamination              0.2759     0.5333     0.3636     0.5333
+  block etch                    N/A        N/A        N/A        N/A  [present in training — absent from test set]
+  bridge                     0.3243     0.3750     0.3478     0.3750
+  clean                      0.3810     0.2424     0.2963     0.2424
+  coating bad                   N/A        N/A        N/A        N/A  [present in training — absent from test set]
+  foreign material           0.0909     0.0333     0.0488     0.0333
+  scratch                    0.1026     0.1333     0.1159     0.1333
+  voids dents                   N/A        N/A        N/A        N/A  [present in training — absent from test set]
+  other                      0.4464     0.1773     0.2538     0.1773
+  --------------------------------------------------------------------
+  macro avg (present classes)     0.2702     0.2491     0.2377          —
+  overall accuracy                —          —          —     0.2230
+Generating confusion matrices ...
+✓ Confusion matrices saved
+Generating dashboard ...
+✓ Dashboard saved
+✓ JSON report saved: /kaggle/working/final_evaluation/final_evaluation_report.json
+
+========================================================================
+OUTPUT FILES
+========================================================================
+  /kaggle/working/final_evaluation/
+    ├── final_evaluation_report.json
+    ├── cm_known_classes.png
+    ├── cm_with_other.png
+    ├── cm_raw_counts.png
+    ├── summary_dashboard.png
+    └── prediction_distribution.png
+
+========================================================================
+SUMMARY
+========================================================================
+  Known-class accuracy                : 26.45%
+  Overall accuracy                    : 22.30%
+  Macro-averaged F1 (present classes) : 0.2377
+  Macro-averaged recall (active known classes) : 26.3%
+  Contamination recall                : 53.3%
+  Bridge recall                       : 37.5%
+  Total samples evaluated             : 296
+  Known-class samples                 : 155
+  Novel / unseen-class samples        : 141 (47.6% of test set)
+  Open-set rejections                 : 56 (18.9% of predictions)
+
+  141 of 296 test samples (47.6%) belong to defect
+  categories unseen during training (Crack, LER, Open, Other).
+  Evaluated on known-class samples only, the model achieves 26.45%
+  accuracy across 5 defect types, compared to 20.0% uniform random chance.
+  Macro-averaged recall across the 5 active known classes reaches 26.3%,
+  averaging per-class recall uniformly across all active defect types.
+  Contamination recall of 53.3% demonstrates strong sensitivity
+  for that defect category.
+========================================================================
